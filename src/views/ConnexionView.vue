@@ -58,7 +58,7 @@ async function handleLogin() {
 
     if (response.status === 200) {
       const data = await response.json()
-      if (data.res === 'ok') {
+      if (data.res === 'OK') {
         success.value = true
         // Exemple : rediriger vers la page d'accueil après connexion
         setTimeout(() => {
