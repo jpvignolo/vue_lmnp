@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Muli-Regular';
+    src:url('https://lmnp.decla.fr/fonts/Muli-Regular.ttf.woff') format('woff'),
+        url('https://lmnp.decla.fr/fonts/Muli-Regular.ttf.svg#Muli-Regular') format('svg'),
+        url('https://lmnp.decla.fr/fonts/Muli-Regular.ttf.eot'),
+        url('https://lmnp.decla.fr/fonts/Muli-Regular.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}

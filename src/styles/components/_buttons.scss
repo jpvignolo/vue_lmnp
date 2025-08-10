@@ -1,0 +1,39 @@
+@use "@theme-scss" as *;  /* tokens du thème actif */
+
+.btn {
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Gilroy';
+    display: inline-flex; align-items: center; gap: .5rem;
+    border-radius: 1rem; padding: .5rem .5rem * 2;
+    font-weight: normal; line-height: 1;
+
+    &--sm { padding: .5rem $btn-default-space * .5; font-size: .875rem; }
+    &--md { font-size: 1rem; padding: $btn-default-space}
+    &--lg { padding: .5rem $btn-default-space * 1.5; font-size: 1.125rem; }
+
+    &--primary, &--blue    { 
+        background: $color-primary; color: $color-on-primary; 
+        border-width: 1px 0;
+        border-style: solid ;
+        border-color: $color-primary;
+        box-shadow: $shadow-primary;
+    }
+    &--secondary { background: $color-secondary; color: $color-on-secondary; }
+    &--ghost     { background: transparent; color: $color-primary; border: 1px solid currentColor; }
+
+    &:disabled,
+    &.is-loading { opacity: .6; pointer-events: none; }
+
+    &:hover {
+        background: $color-primary-hover !important;
+        -webkit-transition: background-color .3s ease-in-out;
+        -ms-transition: background-color .3s ease-in-out;
+        transition: background-color .3s ease-in-out;
+        border-width: 1px 0 !important;
+        border-style: solid !important;
+        border-color: $color-primary-hover !important;
+    }
+}

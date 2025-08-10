@@ -1,0 +1,55 @@
+@font-face {
+   font-family: 'Gilroy';
+   src:url('https://lmnp.decla.fr/fonts/Gilroy-Regular.woff') format('woff'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Regular.svg#Gilroy') format('svg'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Regular.eot'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Regular.ttf') format('truetype'); 
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Gilroy';
+   src:url('https://lmnp.decla.fr/fonts/Gilroy-Light.woff') format('woff'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Light.svg#Gilroy') format('svg'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Light.eot'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Light.ttf') format('truetype'); 
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Gilroy';
+   src:url('https://lmnp.decla.fr/fonts/Gilroy-Bold.woff') format('woff'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Bold.svg#Gilroy') format('svg'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Bold.eot'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+       url('https://lmnp.decla.fr/fonts/Gilroy-Bold.ttf') format('truetype');
+   font-weight: bold;
+   font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Medium.woff2') format('woff2'),
+    url('/fonts/Gilroy-Medium.woff') format('woff'),
+    url('/fonts/Gilroy-Medium.svg#Gilroy') format('svg'),
+    url('/fonts/Gilroy-Medium.eot'),
+    url('/fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('https://lmnp.decla.fr/fonts/Gilroy-Semibold.woff2') format('woff2'),
+        url('https://lmnp.decla.fr/fonts/Gilroy-Semibold.woff') format('woff'),
+        url('https://lmnp.decla.fr/fonts/Gilroy-Semibold.eot'),
+        url('https://lmnp.decla.fr/fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('https://lmnp.decla.fr/fonts/Gilroy-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
