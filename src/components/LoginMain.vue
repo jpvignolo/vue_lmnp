@@ -1,8 +1,8 @@
 <!-- src/components/LoginMain.vue -->
 <template>
   <div class="login-main">
-    <h1>Connexion</h1>
-    <form @submit.prevent="handleLogin" class="login-form">
+    <h1><span class="txt-highlight">Connectez-vous</span> à votre compte LMNP</h1>
+    <form @submit.prevent="handleLogin" class="input-form">
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -11,6 +11,7 @@
           type="email"
           required
           placeholder="votre@email.com"
+          class="inpuut input-with-icon icon-email"
         />
       </div>
       <div class="form-group">
@@ -21,9 +22,12 @@
           type="password"
           required
           placeholder="••••••••"
+          class="input input-with-icon icon-password"
         />
       </div>
-      <BlueButton type="submit">{{ loading ? 'Connexion...' : 'Se connecter' }}</BlueButton>
+      <div class="margin-submit">
+        <BlueButton type="submit">{{ loading ? 'Connexion...' : 'Se connecter' }}</BlueButton>
+      </div>
       <p v-if="error" class="error">{{ error }}</p>
       <p v-if="success" class="success">Connecté avec succès !</p>
     </form>
@@ -84,24 +88,6 @@ function handleLogin() {
   margin-bottom: 1.25rem;
 }
 
-.login-form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.login-form button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
 .error {
   margin-top: 1rem;
   color: #d00;
@@ -112,5 +98,9 @@ function handleLogin() {
   margin-top: 1rem;
   color: #080;
   text-align: center;
+}
+
+.margin-submit {
+  margin-top: 1.5rem;
 }
 </style>

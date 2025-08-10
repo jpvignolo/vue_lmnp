@@ -1,0 +1,35 @@
+.input-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: .9rem;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: 0;
+  text-align: left;
+  padding-left: .65rem;
+  margin-bottom: .25rem;
+}
+
+.input-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-with-icon {
+  padding-left: 2.1rem !important;       /* espace pour que le texte ne touche pas l'icône */
+  &.icon-email {
+    background: url("../../assets/email.svg") no-repeat .4rem center;
+    background-size: 1.15rem;
+  };
+  &.icon-password {
+    background: url("../../assets/password.svg") no-repeat .4rem center;
+    background-size: 1.15rem;
+  };
+}
