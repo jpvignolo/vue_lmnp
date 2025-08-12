@@ -3,7 +3,7 @@
     <div class="left-pane">
       <!-- Illustration and logo -->
       <img
-        :src="logo_white"
+        :src="logo_dark"
         alt="logo"
         class="logo"
       />
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { logo_white } from '@theme'
+import { logo_dark } from '@theme'
 // Aucun code script nécessaire ici, les composants sont injectés via <router-view>
 </script>
 
@@ -30,15 +30,11 @@ import { logo_white } from '@theme'
 }
 
 .left-pane {
-  flex: 1;
-  background-color: $color-primary;
+  width: 17.25rem;
+  background-color: $color-left-pane;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url(@/assets/onboarding-2025-1.svg);
 }
 
 .onboarding-image {
@@ -58,39 +54,6 @@ import { logo_white } from '@theme'
   align-items: center;
   justify-content: center;
   padding: 2rem;
-}
-
-::v-deep(.form-line) {
-  margin-bottom: 1rem;
-}
-
-::v-deep(.login-left) {
-  text-align: left;
-  color: #fff;
-}
-
-::v-deep(.login-left h1) {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-::v-deep(.login-left p) {
-  font-size: 1.125rem;
-  line-height: 1.4;
-}
-
-::v-deep(.connexion-main) {
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-::v-deep(.connexion-main h1) {
-  font-family: Gilroy;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-size: 1.75rem;
 }
 
 </style>

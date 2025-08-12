@@ -1,7 +1,6 @@
 <template>
-  <div class="login-left">
-    <h1>Connectez-vous à votre compte LMNP</h1>
-    <p>Avec decla.fr, votre déclaration LMNP devient un jeu d'enfant !</p>
+  <div class="menu-left">
+    Menu left
   </div>
 </template>
 

@@ -18,7 +18,7 @@ export async function login(email: string, password: string): Promise<void> {
 
   if (response.status === 200) {
     const data = await response.json()
-    if (data.res === 'OK') {
+    if (data.success === true) {
       return
     } else {
       throw new Error('Réponse inattendue du serveur')
