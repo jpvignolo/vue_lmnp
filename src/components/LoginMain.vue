@@ -1,9 +1,9 @@
 <!-- src/components/LoginMain.vue -->
 <template>
-  <div class="login-main">
+  <div class="connexion-main">
     <h1><span class="txt-highlight">Connectez-vous</span> à votre compte LMNP</h1>
     <form @submit.prevent="handleLogin" class="input-form">
-      <div class="form-group">
+      <div class="form-group form-line">
         <label for="email">Email</label>
         <input
           id="email"
@@ -14,7 +14,7 @@
           class="inpuut input-with-icon icon-email"
         />
       </div>
-      <div class="form-group">
+      <div class="form-group form-line">
         <label for="password">Mot de passe</label>
         <input
           id="password"
@@ -68,21 +68,6 @@ function handleLogin() {
 </script>
 
 <style scoped>
-.login-main {
-  width: 100%;
-  max-width: 380px;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.login-main h1 {
-  font-family: Gilroy;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-size: 1.75rem;
-}
 
 .login-form .form-group {
   margin-bottom: 1.25rem;

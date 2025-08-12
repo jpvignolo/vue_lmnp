@@ -6,6 +6,7 @@ declare module '@theme' {
     fec: string;
   };
   export const logo_white: string;
+  export const logo_dark: string;
 }
 
 declare module '@theme/*' {

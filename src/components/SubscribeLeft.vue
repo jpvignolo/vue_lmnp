@@ -1,10 +1,13 @@
 <template>
-  <div class="component">
-    <h2>Composant LEFT</h2>
-    <p>Je suis le composant <strong>LEFT</strong>.</p>
+  <div class="login-left">
+    <h1>Connectez-vous à votre compte LMNP</h1>
+    <p>Avec decla.fr, votre déclaration LMNP devient un jeu d'enfant !</p>
   </div>
 </template>
 
 <script setup lang="ts">
     console.log('SubscribeLeft monté')
 </script>
+
+<style scoped>
+</style>

@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-    console.log('SubscribeLeft monté')
+    console.log('DashboardLeft monté')
 </script>
 
 <style scoped>
