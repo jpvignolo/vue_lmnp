@@ -33,8 +33,8 @@ export default defineConfig(  ({mode}) => {
         preprocessorOptions: {
             scss: {
                 additionalData:
-                  `@use "${abstractsPath}" as *;` +
-                  `@use "${themePath}" as *;` +
+                  `@use "${abstractsPath.replace(/\\/g, '/')}" as *;` +
+                  `@use "${themePath.replace(/\\/g, '/')}" as *;` +
                   `\n`
             },
         },

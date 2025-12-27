@@ -1,4 +1,48 @@
 @use "@theme-scss" as *;  /* tokens du thème actif */
+@use "../abstracts/mixins" as *;
+
+@mixin color-btn ($color, $colorHover: transparent, $border: none, $font-size: 1rem, $font-weight: 500) {
+  font-family: 'Gilroy' !important;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  opacity: 1;
+  background: $color;
+  border: $border;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  @include phone-tablet {
+    font-size: 0.85rem !important;
+  }
+  &.disabled-link {
+    pointer-events: none;
+    box-shadow: none !important;
+  }
+  a, a:hover, a:focus, a:active {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    text-decoration: none;
+    background: $colorHover !important;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -ms-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+  &:hover, &:focus, &:active, &:focus-visible {
+    background: $colorHover !important;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -ms-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+}
 
 .btn {
     width: 100%;
@@ -36,4 +80,19 @@
         border-style: solid !important;
         border-color: $color-primary-hover !important;
     }
+}
+
+.blue-btn {
+  @include color-btn($blue, $bg-blue-button-hover);
+  & {
+    color: white !important;
+    border-width: 1px 0px 1px 0px !important;
+    border-style: solid !important;
+    border-color: rgba(14, 99, 231, 1) !important;
+    &:hover,&:active, &:focus, &:focus-visible {
+      border-width: 1px 0px 1px 0px !important;
+      border-style: solid !important;
+      border-color: rgba(0, 47, 121, 1) !important;
+    }
+  }
 }

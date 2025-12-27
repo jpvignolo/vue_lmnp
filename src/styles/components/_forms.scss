@@ -1,0 +1,265 @@
+@use "@theme-scss" as *;
+@use "../abstracts/mixins" as *;
+
+.form_box {
+  width: 855px;
+  background: $greybg 0% 0% no-repeat padding-box;
+  box-shadow: 0px 6px 18px #0000000a;
+  border-radius: 10px;
+  opacity: 1;
+  background-color: #eff4f9;
+}
+
+.input-focus:focus {
+  background-color: #feffbc;
+}
+
+.input-group {
+  position: relative;
+}
+
+.form-group.has-ico input + svg,
+.form-group.has-ico input + .input-addon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10px;
+  font-size: 1rem;
+  color: #d2d2d2;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+
+.form_header {
+  width: 855px;
+  height: 96px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  background: $blue 0% 0% no-repeat padding-box;
+  box-shadow: 0px 6px 18px #0000000a;
+  border-radius: 10px 10px 0px 0px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_body {
+  background-color: $greybg;
+  padding-left: 53px;
+  padding-right: 53px;
+}
+
+.form_footer {
+  width: 855px;
+  height: 87px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 6px 18px #0000000a;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.form_group_title {
+  color: $darkblue;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.form-check {
+  flex-direction: row;
+}
+
+.form-group.below-check {
+  margin-top: 9px;
+}
+
+input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 0px;
+  opacity: 1;
+  width: 100%;
+  font-weight: 600 !important;
+  color: $darkblue;
+}
+
+input:not([type="checkbox"]):not([type="radio"]) {
+  border-radius: 0.5rem;
+}
+
+input[type="radio"] {
+  width: 1.16rem;
+  height: 1.16rem;
+}
+
+label {
+  text-align: left;
+  letter-spacing: 0px;
+  color: #9da2c0;
+  opacity: 1;
+  margin-bottom: 5px;
+}
+
+:required {
+  border: 1px red;
+}
+
+.form-check-label {
+  margin-left: 10px;
+}
+
+.label_check::before {
+  background-image: url("/img/check.svg");
+}
+
+:checked + .label_check::before {
+  background-image: url("/img/check-blue.svg");
+}
+
+input.form-control,
+select.form-control {
+  width: 100%;
+  font-size: $input-font-size;
+  border: 1px solid $input-border-color;
+}
+
+input.form-control {
+  &:read-only {
+    background-color: #d1d4e3;
+  }
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: normal;
+  font-size: 0.9rem;
+}
+
+.form-check-input[type="checkbox"] {
+  border-color: $input-border-color;
+  border-radius: 5px !important;
+  width: 16px;
+  height: 16px;
+  gap: 8px;
+}
+
+// Select
+select:not([class^="flatpickr-monthDropdown-months"]),
+.selectize-input {
+  background-color: #fff;
+  font-size: $input-font-size;
+  border-radius: $input-radius;
+  display: block;
+  width: 100%;
+  font-weight: 600;
+}
+
+select:focus,
+.selectize-input.focus {
+  border: 1px solid;
+  outline: 0;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+// Radio Buttons
+.radio-btn {
+  margin: -5px;
+  list-style: none;
+  padding: 0;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.radio-btn li {
+  position: relative;
+  float: left;
+  margin: 5px;
+}
+
+.radio-btn li label {
+  margin: 0;
+  padding: 8px 25px 6px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+  color: $darkblue;
+  font-weight: bold;
+  text-align: center;
+}
+
+.radio-btn li input {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.radio-btn li input:checked + label {
+  background: $blue;
+  color: #fff;
+}
+
+.radio-btn li .txt-btn {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.radio-btn li svg,
+.radio-btn li i {
+  height: 36px;
+}
+
+.radio-btn li input:checked + label svg {
+  fill: #fff;
+}
+
+.radio-btn.type-bien li {
+  width: 225px;
+}
+
+.radio-btn.grid-format {
+  margin: -5px;
+}
+
+.radio-btn.grid-format li {
+  margin: 5px;
+}

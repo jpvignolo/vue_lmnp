@@ -1,4 +1,60 @@
 // Colors 
+$blue: #0E63E7 !default;
+$bg-blue-button-hover: #012F78 !default;
+$greybg: #EFF4F9 !default;
+$darkblue: #2a2857 !default;
+$darkbluehover: #0A0932 !default;
+$darkbluehoverlight: #6060a7 !default;
+$greytxt: #9DA2C0 !default;
+$greytxthover: #808DAA !default;
+$lightblue: #F2F8FF !default;
+$blueribbon: #EEF8FF !default;
+$mediumblue: #D8EFFF !default;
+$lightbluetext: #9EB8F7 !default;
+$addsaveinnercolor: #203E90 !default;
+$topbarbg: white !default;
+$green: #37C9A5 !default;
+$lightgreen: #7bdec7 !default;
+$lightgrey: #C0C0C0 !default;
+$lightergrey: #F7F9FC !default;
+$mediumgrey: #828282 !default;
+$box-shadow-color: #E3E7EA !default;
+$almost-black: #211F4C !default;
+$greyborderinput: #DFDFE6 !default;
+$err: #FB5F5F !default;
+$red: #d12d1d !default;
+
+// Background colors
+$bgrecettes: #EEFCF4 !default;
+$bgrecettestot: #D9F2E3 !default;
+$bgcharges: #FBF0EC !default;
+$bgchargessoustot: #F6E3DC !default;
+$bgchargestot: #EED4CB !default;
+$bgemprunt: #F6F4E7 !default;
+$bgemprunttot: #ECE8D0 !default;
+$chargestottxt: #CE4944 !default;
+$emprunttottxt: #AFA03E !default;
+
+// Special colors
+$step_progress_green: #05FF00 !default;
+$premium_assit_green: #027a48 !default;
+$premium_assist_green: #027a48 !default; // Alias for consistency
+$premium_assit_green_bg: #ecfdf3 !default;
+$border_color: #EAECF0 !default;
+$border_color_radio_amort: #c0d0ef !default;
+$promo_color: #555379 !default;
+$label-color: #9DA2C0 !default;
+$fec-border-color: #ced3ec !default;
+
+// Carousel
+$carousel-bg: #EDFCF7 !default;
+$carousel-border: #D3F8E9 !default;
+$carousel-header: #19B090 !default;
+$carousel-control-opacity: 0.25 !default;
+$carousel-control-hover-opacity: 0.9 !default;
+
+// Site
+$sitebgcolor: $lightblue !default;
 
 //buttons
 $color-primary: #0E63E7 !default;
@@ -19,6 +75,50 @@ $color-left-pane: while !default;
 // Texts
 $color-txt-dark: #2a2857 !default;
 $color-txt-href: rgb(11, 79, 185) !default;
+
+// Forms
+$input-font-size: 1rem !default;
+$input-border-color: #E8EAEE !default;
+$input-radius: 0.5rem !default;
+$input-height: 3rem !default;
+$input-size: 0.9rem !default;
+$input-padding: 1rem !default;
+$button-radius: 1rem !default;
+$button-font-size: 1rem !default;
+$button-padding: 0.75rem !default;
+
+// Layout
+$default-border-radius: 1rem !default;
+$headerheight: 80px !default;
+$sidenavwidth: 17.25rem !default;
+$sidenav_padding: 2rem 1.35rem !default;
+
+// Typography sizes
+$smalltxtsize: 0.834rem !default; // equiv 15px
+$smallertxtsize: 0.828rem !default; // equiv 14px
+$dropdowntxtsize: 0.91rem !default; // equiv 16px
+$titletxtsize: 1.6667rem !default; // equiv 30px
+$bigtitletxtsize: 2.75rem !default; // equiv 38px
+$biggertitletxtsize: 2.15rem !default; // equiv 32px
+$infotxtsize: 1.15rem !default; // equiv 22px
+$titletxtbigsize: 1.28rem !default; // equiv 24px
+$infotxtbigsize: 1.4rem !default; // equiv 28px
+$rowammorttxtsize: 1.1rem !default; // equiv 20px
+$bigtitle: 3.33rem !default; // equiv 60px
+$biggertitle: 3.6rem !default; // equiv 65px
+$page_title: 2rem !default;
+$addsaveinner: 1rem !default;
+$celltxtxsize: 0.875rem !default;
+$headertxtxsize: 0.875rem !default;
+$smallheadertxtsize: 0.785rem !default;
+$rowstatustxtxsize: 0.7rem !default;
+$sidenavinfotxtsize: 0.875rem !default;
+$amortitlesize: 1.19rem !default;
+$extrasmall: 0.75rem !default;
+$onboardingtitle: 2.5rem !default;
+$onboardingtxt: 1.3rem !default;
+$carouseltxtsize: 1rem !default;
+$carouseltitlesize: 1.42rem !default;
 
 //Spaces
 $btn-default-space: 0.75rem !default;

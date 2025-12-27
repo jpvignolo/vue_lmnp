@@ -10,7 +10,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ConnexionView.vue'),
+      component: () => import('../views/StarterView.vue'),
       children: [
         {
           path: '',
@@ -27,7 +27,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ConnexionView.vue'),
+      component: () => import('../views/StarterView.vue'),
       children: [
         {
           path: '',
@@ -37,20 +37,29 @@ const router = createRouter({
           }
         }
       ]
-    },{
-      path: '/dashboard',
-      name: 'dashboard',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/DashboardView.vue'),
+    },
+    {
+      path: '/starter',
+      name: 'starter',
+      component: () => import('../views/StarterView.vue'),
       children: [
         {
           path: '',
           components: {
-            left: () => import('@/components/DashboardLeft.vue'),
-            main: () => import('@/components/DashboardList.vue'),
+            left: () => import('@/components/StarterLeft.vue'),
+            main: () => import('@/components/StarterMain.vue'),
           }
+        }
+      ]
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('../views/DashboardLayout.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('../views/DashboardView.vue')
         }
       ]
     },

@@ -1,0 +1,484 @@
+@use '../tokens/tokens' as *;
+@use '../abstracts/mixins' as *;
+
+// ==================================
+// ONBOARDING LAYOUT
+// ==================================
+
+.onboarding-right {
+  background-color: #F0F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  
+  @include phone-tablet {
+    background-color: transparent;
+    
+    > div {
+      width: 100%;
+    }
+    
+    h1 {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.onboarding-left {
+  max-width: 630px;
+  height: 100%;
+}
+
+.onboarding-visual {
+  background-color: transparent;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("@/assets/onboarding-2025-1.svg");
+}
+
+.onboarding-container-left {
+  padding: 0 3rem;
+}
+
+.onboarding-container {
+  max-width: 538px;
+  
+  @include phone-tablet {
+    width: 100%;
+    padding: 0 0.5rem;
+    margin-top: 1.333rem;
+  }
+}
+
+.card-onboard {
+  // Card wrapper for onboarding forms - styles inherited from parent
+  display: block;
+}
+
+.siren-container {
+  // Container for SIREN input section - styles inherited from parent
+  display: block;
+}
+
+.activity-name-container {
+  // Container for activity name section - styles inherited from parent
+  display: block;
+}
+
+// ==================================
+// ONBOARDING LOGO
+// ==================================
+
+.onboarding-logo {
+  height: 164px;
+  
+  > img {
+    height: 37px;
+  }
+}
+
+.onboarding-logo-starter {
+  @extend .onboarding-logo;
+  height: 9rem;
+}
+
+@include phone-tablet {
+  .onboarding-form .onboarding-logo {
+    height: 164px;
+  }
+}
+
+// ==================================
+// ONBOARDING TYPOGRAPHY
+// ==================================
+
+.onboarding-title {
+  color: #FFF;
+  font-family: Gilroy;
+  font-size: $onboardingtitle;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.5rem;
+  width: 100%;
+  margin-bottom: 24px;
+
+  @include small-medium-laptop {
+    font-size: calc($onboardingtitle * 0.8);
+  }
+}
+
+.onboarding-cnx-title {
+  color: $darkblue;
+  font-family: Gilroy;
+  font-size: $bigtitletxtsize;
+  font-weight: 600;
+  text-align: center;
+  line-height: 3.25rem;
+  
+  > span {
+    color: $blue;
+  }
+  
+  @include phone-tablet {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+}
+
+.onboarding-paragraph {
+  color: rgba(255, 255, 255, 0.80);
+  font-family: Gilroy;
+  font-size: $onboardingtxt;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+
+  @include small-medium-laptop {
+    font-size: calc($onboardingtxt * 0.8);
+  }
+}
+
+.onboarding-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+
+// ==================================
+// ONBOARDING FORM ELEMENTS
+// ==================================
+
+.onboarding-form-line {
+  margin-bottom: 12px;
+
+  @include small-medium-laptop {
+    margin-bottom: 12px;
+  }
+}
+
+.onboarding-separator {
+  height: 12px;
+}
+
+.onboarding-previous {
+  // leading-trim: both; // Not yet supported
+  // text-edge: cap; // Not yet supported
+  font-family: Gilroy;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 2.25rem;
+  
+  > a {
+    color: $darkblue;
+    display: flex;
+    
+    > span {
+      color: $blue;
+    }
+  }
+}
+
+.siren-line {
+  > input {
+    max-width: 500px;
+    font-size: 1.1rem;
+    @include placeholder($greytxt, 1.1rem, 300);
+  }
+}
+
+.input-error {
+  color: $red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.input-warn {
+  color: $blue;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+// ==================================
+// ONBOARDING BUTTONS & CONTROLS
+// ==================================
+
+.btn-frco {
+  margin-top: 1.5rem;
+}
+
+.rester-connecte-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.cgv_wrap {
+  margin-top: 1.15rem;
+  margin-bottom: 1rem;
+  
+  @include phone {
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+// ==================================
+// ONBOARDING DIVIDER
+// ==================================
+
+.ou-divider {
+  display: flex;
+  width: 100%;
+  height: 1px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: $lightgrey;
+  margin-bottom: 2rem;
+  
+  @include phone-tablet {
+    // margin-bottom: 0.65rem;
+  }
+  
+  > div {
+    display: inline-flex;
+    padding: 6px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    background: var(--neutral-gray-100, #F1F5F9);
+    
+    @include phone-tablet {
+      // background-color: transparent !important;
+    }
+    
+    color: #434343;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: $headertxtxsize;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+  }
+
+  @include small-medium-laptop {
+    margin-bottom: 20px;
+  }
+}
+
+// ==================================
+// ONBOARDING TOOLTIP BOX (Bon à savoir)
+// ==================================
+
+.onboarding-tooltip-box {
+  margin-top: 1.575rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 1rem;
+  width: 100%;
+  background: $blueribbon;
+  border: 1px solid #D8EFFF;
+  border-radius: 8px;
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+
+  > .bon-a-savoir-header {
+    color: $blue;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+    > .lampe {
+      padding-bottom: 4px;
+    }
+  }
+
+  > .bon-a-savoir-title {
+    color: $darkblue;
+    font-size: 1rem;
+    
+    li {
+      list-style: disc !important;
+    }
+    
+    > ul {
+      margin-bottom: 0.33rem;
+      padding-left: 0.25rem;
+    }
+  }
+
+  > .bon-a-savoir-txt {
+    font-size: calc($carouseltxtsize * 0.92) !important;
+    color: $darkblue;
+  }
+}
+
+.bon-a-savoir-txt-notaire {
+  margin-top: -4px !important;
+}
+
+// ==================================
+// ONBOARDING MODALS
+// ==================================
+
+.pb-franceco-modal {
+  > div {
+    width: 760px;
+    max-width: 760px;
+    
+    @include phone-tablet {
+      width: 96%;
+      max-width: 96%;
+    }
+  }
+  
+  li {
+    opacity: .7;
+    text-align: left;
+    list-style: disc;
+  }
+  
+  .modal-body {
+    @include phone-tablet {
+      padding: 0 .75rem 0 !important;
+    }
+  }
+}
+
+.onboarding-popup-txt {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
+  // leading-trim: both; // Not yet supported
+  // text-edge: cap; // Not yet supported
+  color: $darkblue;
+  font-size: $celltxtxsize;
+  margin-bottom: 4px;
+  
+  .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+  
+  label {
+    font-weight: 400;
+  }
+}
+
+.onboarding-one-modal {
+  .form-select {
+    font-size: $celltxtxsize;
+    font-family: 'Gilroy' !important;
+    font-style: normal;
+    font-weight: 600;
+    
+    option {
+      font-size: $celltxtxsize;
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 600;
+    }
+  }
+}
+
+// ==================================
+// ONBOARDING RADIO CHOICES
+// ==================================
+
+.onboarding-choix-notaire-container {
+  margin-top: 6px;
+}
+
+.onboarding-choix-radio {
+  margin: 8px 0;
+  border: 1px solid #F2F3FC;
+  box-shadow: none;
+  padding: 20px 14px;
+  
+  > img {
+    align-self: start;
+    width: 1.5rem;
+  }
+  
+  &:hover {
+    border-color: #E3E4ED !important;
+  }
+  
+  &:checked {
+    background-color: $lightblue;
+    border-color: #B3B4BF !important;
+  }
+  
+  &:checked:hover {
+    background-color: $lightblue;
+    border-color: #B3B4BF !important;
+  }
+}
+
+.btn-check:checked + .onboarding-choix-radio {
+  background-color: $lightblue;
+  border-color: #B3B4BF !important;
+  
+  &:hover {
+    background-color: $lightblue;
+    border-color: #B3B4BF !important;
+  }
+}
+
+.choix-desc {
+  margin-left: 4px;
+  font-family: Gilroy;
+  color: $darkblue;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.choix-txt {
+  opacity: 0.7;
+}
+
+// ==================================
+// CONTACT ROW
+// ==================================
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    
+    > .form-group + .form-group {
+      margin-left: 1rem;
+    }
+  }
+}

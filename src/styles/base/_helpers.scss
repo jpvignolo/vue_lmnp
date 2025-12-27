@@ -1,0 +1,301 @@
+@use "@theme-scss" as *;
+@use "../abstracts/mixins" as *;
+
+// Visibility helpers
+.hide-mobile {
+  @include phone-tablet {
+    display: none !important;
+  }
+}
+
+.mobile-invisible {
+  @include phone-tablet {
+    visibility: hidden !important;
+  }
+}
+
+.hide-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  @include desktop {
+    display: none;
+  }
+  @include desktop-sm-tablet-hoz {
+    display: none;
+  }
+}
+
+.show-desktop {
+  @include phone {
+    display: none;
+  }
+}
+
+// Flex utilities
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  display: flex;
+  flex: 1;
+}
+
+.flex-2 {
+  display: flex;
+  flex: 2;
+}
+
+.flex-3 {
+  display: flex;
+  flex: 3;
+}
+
+.flex-column, .flex-col {
+  flex-direction: column;
+}
+
+.flex-row-reverse {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+// Width & Height
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+// Position
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+// Background
+.bg-darkblue {
+  background-color: $darkblue;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+// Mobile specific
+.mob-align-end {
+  @include phone-tablet {
+    align-items: end !important;
+    display: flex;
+  }
+}
+
+.mob-justify-end {
+  @include phone-tablet {
+    justify-content: end !important;
+  }
+}
+
+.mob-text-right {
+  @include phone-tablet {
+    text-align: right !important;
+  }
+}
+
+// Spacing utilities
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-half {
+  margin-top: 0.5rem;
+}
+
+.mt-2rem {
+  margin-top: 2rem;
+}
+
+.ml-half {
+  margin-left: 0.5rem;
+}
+
+.ml-quart {
+  margin-left: 0.25rem;
+}
+
+.mr-quart {
+  margin-right: 0.25rem;
+}
+
+.mr-half {
+  margin-right: 0.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 2rem;
+}
+
+.mb-7 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 3rem;
+}
+
+.mb--1 {
+  margin-bottom: -1rem;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.pl-025 {
+  padding-left: 0.33rem !important;
+}
+
+.pl-1 {
+  padding-left: 1rem;
+}
+
+.pl-2 {
+  padding-left: 2rem;
+}
+
+// Text utilities
+.text-sm {
+  font-size: 0.85rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-light {
+  font-weight: 500 !important;
+}
+
+.font-bold, .bold {
+  font-weight: bold !important;
+}
+
+// Color utilities
+.color-blue {
+  color: $blue;
+}
+
+.color-red {
+  color: $err;
+}
+
+.color-orange {
+  color: orange;
+}
+
+.color-green {
+  color: green;
+}
+
+// Misc
+.celltxtxsize {
+  font-size: $celltxtxsize;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.col-1-half {
+  flex: 0 0 auto;
+  width: 12.49995%;
+}
+
+.row-bottom-align {
+  align-items: flex-end;
+}
+
+@include phone-tablet {
+  .card-row, .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .card-row>*, .row>* {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+// Hide number input arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input::placeholder {
+  font-size: 0.875rem;
+}
+

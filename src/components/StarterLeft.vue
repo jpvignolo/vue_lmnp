@@ -1,10 +1,10 @@
 <template>
   <div class="onboarding-container-left">
-    <div class="onboarding-logo flex align-center">
+    <div class="onboarding-logo-starter flex align-center">
       <img :src="logo_white" :style="cgpTransform" />
     </div>
     <div>
-      <div class="onboarding-title">Connectez-vous à votre compte LMNP</div>
+      <div class="onboarding-title">Créer votre compte LMNP</div>
       <div class="onboarding-paragraph">
         Avec decla.fr, votre déclaration LMNP devient un jeu d'enfant !
       </div>

@@ -1,3 +1,6 @@
+@use "@theme-scss" as *;
+@use "../abstracts/mixins" as *;
+
 @font-face {
   font-family: 'Muli-Regular';
   src: url('../../assets/fonts/Muli-Regular.ttf.woff') format('woff'),
@@ -61,4 +64,150 @@
   url('../../assets/fonts/Gilroy-Semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
+}
+
+// Root font size
+:root {
+  --mainfontsize: 16px;
+  --bs-accordion-btn-icon-width: 1rem !important;
+}
+
+@include desktop-md {
+  :root {
+    --mainfontsize: 14px;
+  }
+}
+
+@include desktop-sm-tablet-hoz {
+  :root {
+    --mainfontsize: 13px !important;
+  }
+}
+
+@include tablet-ver {
+  :root {
+    --mainfontsize: 13px !important;
+  }
+}
+
+// Base styles
+* {
+  font-family: 'Gilroy';
+}
+
+html {
+  font-size: var(--mainfontsize);
+  @include phone {
+    height: 100%;
+  }
+}
+
+body {
+  color: $darkblue;
+  font-family: Gilroy, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background: #00111c;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0px;
+
+  @include phone {
+    height: 100%;
+  }
+}
+
+label {
+  color: inherit;
+}
+
+.tbd-label {
+  font-size: 0.75rem;
+  color: $greytxt;
+  font-weight: 400;
+}
+
+.recap-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-right: 1rem;
+  color: $darkblue;
+}
+
+.bloc_title {
+  font-family: Gilroy, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: $titletxtsize;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.page_title {
+  letter-spacing: var(--unnamed-character-spacing--2-6);
+  color: $darkblue;
+  text-align: left;
+  opacity: 1;
+  font-size: $page_title;
+  font-weight: 600;
+  margin: 2.5rem 1.25rem 2.5rem 0;
+  position: relative;
+  width: 100%;
+  @include phone-tablet {
+    margin: 1rem 1.25rem 0.5rem 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.small-txt {
+  font-family: 'Muli-Regular';
+  font-size: $smalltxtsize;
+}
+
+.big-txt {
+  font-size: $infotxtsize;
+  font-family: Gilroy, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.minimal-link {
+  font-size: $smalltxtsize;
+  color: $greytxt;
+
+  a {
+    font-family: 'Muli-Regular';
+    font-size: $smalltxtsize;
+    color: $blue;
+    &.dark {
+      color: $darkblue;
+    }
+  }
+}
+
+.minimal-link-cgu {
+  @extend .minimal-link;
+  margin-top: -2px !important;
+  text-align: left !important;
+  margin-left: 4px;
+
+  a {
+    font-size: $dropdowntxtsize !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  opacity: 0.8;
+}
+
+a.btn:hover, a.btn:active, a.btn:focus {
+  opacity: 1;
+}
+
+a.link-blk, a.link-blk:hover {
+  color: $almost-black;
+  text-decoration: none;
 }

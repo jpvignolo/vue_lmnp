@@ -1,8 +1,12 @@
 @use "./base/reset";
 @use "./base/typography";
 @use "./base/helpers";
+@use "./base/layout";
 @use "./components/buttons";
 @use "./components/inputs";
+@use "./components/forms";
+@use "./components/onboarding";
+@use "./components/sidenav";
 
 //@import './base.css';
 

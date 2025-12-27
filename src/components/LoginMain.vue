@@ -1,36 +1,88 @@
-<!-- src/components/LoginMain.vue -->
 <template>
-  <div class="connexion-main">
-    <h1><span class="txt-highlight">Connectez-vous</span> à votre compte LMNP</h1>
-    <form @submit.prevent="handleLogin" class="input-form">
-      <div class="form-group form-line">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          v-model="email"
-          type="email"
-          required
-          placeholder="votre@email.com"
-          class="inpuut input-with-icon icon-email"
-        />
+  <div>
+    <div class="onboarding-container" v-show="loaded">
+      <div class="onboarding-form">
+        <form @submit.prevent="handleSubmit" id="form_connexion">
+          <div v-show="loaded">
+            <div class="onboarding-cnx-title" style="margin-bottom: 2rem">
+              <span>Connectez-vous</span> à <br />
+              votre compte LMNP
+            </div>
+
+            <!-- Email -->
+            <div class="form-group onboarding-form-line">
+              <label for="email" class="form-label">Email</label>
+              <div class="prepend-icon prepend-icon-email">
+                <input
+                  type="text"
+                  class="form-control verif"
+                  id="email"
+                  placeholder="Votre email"
+                  name="email"
+                  v-model="email"
+                />
+              </div>
+            </div>
+
+            <!-- Mot de passe -->
+            <div class="form-group onboarding-form-line">
+              <label for="pass" class="form-label">Mot de passe</label>
+              <div class="prepend-icon prepend-icon-password">
+                <input
+                  type="password"
+                  class="form-control verif"
+                  id="pass"
+                  placeholder="Votre mot de passe"
+                  name="pass"
+                  v-model="password"
+                />
+              </div>
+              <div class="input-error" v-if="errors.email">{{ errors.email }}</div>
+            </div>
+
+            <!-- Rester connecté + Mot de passe oublié -->
+            <div class="rester-connecte-wrap">
+              <div class="form-check checkbox-wrap">
+                <input
+                  class="form-check-input obg"
+                  v-model="stayConnected"
+                  name="stay_co"
+                  id="stay_co"
+                  type="checkbox"
+                  value="1"
+                />
+                <label class="form-check-label" for="stay_co"> Rester connecté </label>
+              </div>
+
+              <div class="form-label lost-pwd">
+                <a href="#" @click.prevent="showLostPasswordModal">Mot de passe oublié ?</a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <input type="hidden" name="posted" value="1" />
+            <button type="submit" class="btn w-full blue-btn" :disabled="submitting">
+              Se connecter avec son email
+            </button>
+
+            <!-- FranceConnect button placeholder -->
+            <!-- <a href="#" @click.prevent="showFranceConnectModal">
+              <div class="btn btn-frco">
+                <img src="/img/france-connect-logo.svg" />
+                <span class="btn-label">Se connecter avec FranceConnect</span>
+              </div>
+            </a> -->
+          </div>
+
+          <div class="row onboarding-link"></div>
+
+          <div class="form-label text-center" style="margin-top: 1rem">
+            Nous n'avez pas de compte ? &nbsp;<a href="/inscription_lmnp/"> Inscrivez-vous</a>
+          </div>
+        </form>
       </div>
-      <div class="form-group form-line">
-        <label for="password">Mot de passe</label>
-        <input
-          id="password"
-          v-model="password"
-          type="password"
-          required
-          placeholder="••••••••"
-          class="input input-with-icon icon-password"
-        />
-      </div>
-      <div class="margin-submit">
-        <BlueButton type="submit">{{ loading ? 'Connexion...' : 'Se connecter' }}</BlueButton>
-      </div>
-      <p v-if="error" class="error">{{ error }}</p>
-      <p v-if="success" class="success">Connecté avec succès !</p>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -38,54 +90,64 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { login } from '@/services/authService'
-import BlueButton from "@/components/ui/BlueButton.vue"
 
+const router = useRouter()
+const loaded = ref(true)
 const email = ref('')
 const password = ref('')
-const loading = ref(false)
-const error = ref<string | null>(null)
-const success = ref(false)
-const router = useRouter()
+const stayConnected = ref(false)
+const submitting = ref(false)
 
-function handleLogin() {
-  error.value   = null
-  success.value = false
-  loading.value = true
+const errors = ref<Record<string, string>>({})
 
-  login(email.value, password.value)
-    .then(() => {
-      success.value = true
-      return router.push('/dashboard')
-    })
-    .catch((err: unknown) => {
-      // Affiche le message d’erreur si échec
-      error.value = err instanceof Error ? err.message : String(err)
-    })
-    .finally(() => {
-      loading.value = false
-    })
+function showLostPasswordModal() {
+  // TODO: Implémenter la modal mot de passe oublié
+  console.log('Afficher modal mot de passe oublié')
+}
+
+function showFranceConnectModal() {
+  // TODO: Implémenter la modal FranceConnect
+  console.log('Afficher modal FranceConnect')
+}
+
+async function handleSubmit() {
+  errors.value = {}
+
+  // Validation basique
+  if (!email.value.trim()) {
+    errors.value.email = 'Email requis'
+    return
+  }
+  if (!password.value) {
+    errors.value.email = 'Mot de passe requis'
+    return
+  }
+
+  submitting.value = true
+  try {
+    await login(email.value, password.value)
+    await router.push('/dashboard')
+  } catch (err: unknown) {
+    console.error('Erreur:', err)
+    errors.value.email = err instanceof Error ? err.message : 'Email/mot de passe invalide.'
+  } finally {
+    submitting.value = false
+  }
 }
 </script>
 
 <style scoped>
-
-.login-form .form-group {
-  margin-bottom: 1.25rem;
+.lost-pwd a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 0.875rem;
 }
 
-.error {
-  margin-top: 1rem;
-  color: #d00;
-  text-align: center;
+.lost-pwd a:hover {
+  text-decoration: underline;
 }
 
-.success {
-  margin-top: 1rem;
-  color: #080;
-  text-align: center;
-}
-
-.margin-submit {
-  margin-top: 1.5rem;
+.onboarding-link {
+  margin: 0;
 }
 </style>

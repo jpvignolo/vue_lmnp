@@ -1,0 +1,126 @@
+// Responsive breakpoints
+@mixin phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin small-smartphone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin phone-tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-ver {
+  @media (min-width: 769px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-sm-tablet-hoz {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin desktop-md {
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin small-medium-laptop {
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin small-laptop {
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin big-laptop {
+  @media (min-width: 1440px) and (max-width: 1679px) {
+    @content;
+  }
+}
+
+@mixin laptop-hd {
+  @media (min-width: 1680px) {
+    @content;
+  }
+}
+
+@mixin smartphone-tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+// Height-based media queries
+@mixin display-h-900-1000 {
+  @media (min-height: 900px) and (max-height: 1000px) {
+    @content;
+  }
+}
+
+@mixin display-h-750-900 {
+  @media (min-height: 750px) and (max-height: 900px) {
+    @content;
+  }
+}
+
+@mixin display-max-h-750 {
+  @media (max-height: 750px) {
+    @content;
+  }
+}
+
+// Placeholder mixin for input styling
+@mixin placeholder($color, $font-size: 1rem, $font-weight: 400) {
+  &::placeholder {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    opacity: 1;
+  }
+  
+  &:-ms-input-placeholder {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+  }
+  
+  &::-ms-input-placeholder {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+  }
+}
+
